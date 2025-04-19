@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assign-8</title>
+    <style>
+      body{
+        display: flex;
+        align-items: center;
+
+      }
+      div{
+          width: 200px;
+          height: 200px;
+      }
+    </style>
+</head>
+<body>
+<div><span>A</span><img src="walkingMan.gif" width="200" height="200"></div>
+<div><span>B</span><img src="walkingMan.gif" width="200" height="200"></div>
+<div><span>C</span><img src="walkingMan.gif" width="200" height="200"></div>
+<div><span>D</span><img src="walkingMan.gif" width="200" height="200"></div>
+<div><span>E</span><img src="walkingMan.gif" width="200" height="200"></div>
+<div><img src="home.gif" width="200" height="200"></div>
+<script>
+  let men = ["A","B","C","D","E"];
+  const changeMan = () =>{
+      let last = men.pop();
+      men.unshift(last);
+      document.getElementsByTagName("div")[0].getElementsByTagName("span")[0].innerText = men[0];
+      document.getElementsByTagName("div")[1].getElementsByTagName("span")[0].innerText = men[1];
+      document.getElementsByTagName("div")[2].getElementsByTagName("span")[0].innerText = men[2];
+      document.getElementsByTagName("div")[3].getElementsByTagName("span")[0].innerText = men[3];
+      document.getElementsByTagName("div")[4].getElementsByTagName("span")[0].innerText = men[4];
+      for(let i =0;i<men.length;i++){
+          document.getElementsByTagName("div")[i].getElementsByTagName("span")[0].innerText = men[i];
+
+      }
+  }
+  setInterval(changeMan,3000);
+</script>
+</body>
+</html>
